@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+    img{
+        width: 300px;
+        height: 400px;
+        border-radius: 20px;
+        margin-left: 300px;
+        margin-top: 100px;
+    }
+
+    .button1{
+        width: 150px;
+        height: 65px;
+        border-radius: 15px;
+        background-color: red;
+        margin-bottom: 500px;
+        font-size: 20px;
+    }
+
+
+    </style>
+
+</head>
+<body>
+
+<form method="post" action=".">{% csrf_token %}
+    <img src="https://www.infront.com/wp-content/uploads/2013/06/deleting-email.jpg">
+        <button type="submit" class="button1">삭제합니다</button>
+</form>
+
+</body>
+</html>

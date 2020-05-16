@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <style>
+        .all{
+
+            border-radius: 15px;
+            width: 350px;
+            height: 125px;
+            font-family: 'Source Sans Pro', serif;
+            margin: 0 auto;
+            background-color: orange;
+
+            }
+        .register_label{
+            padding-left: 15px;
+            font-weight: bold;
+            }
+        .register_input, .register_label{
+            display: inline-block;
+
+            }
+        .button{
+            background-color: skyblue;
+            height: 50px;
+            width: 150px;
+            font-size: 25px;
+            font-family: 'Source Sans Pro', serif;
+            border-radius: 20px;
+            margin-left: 95px;
+                        }
+
+
+    </style>
+</head>
+<body>
+<div class="all">
+<form method="post" action=".">{% csrf_token %}
+    <div>
+        <div class="register_label">{{ form.username.label_tag }}</div>
+        <div class="register_input">{{ form.username }}</div>
+    </div>
+
+    <div>
+        <div class="register_label">{{ form.password1.label_tag }}</div>
+        <div class="register_input">{{ form.password1 }}</div>
+    </div>
+
+    <div>
+        <div class="register_label">{{ form.password2.label_tag }}</div>
+        <div class="register_input">{{ form.password2 }}</div>
+    </div>
+
+    <button type="submit" class="button">SIGN UP</button>
+
+</form>
+</div>
+
+</body>
+</html>

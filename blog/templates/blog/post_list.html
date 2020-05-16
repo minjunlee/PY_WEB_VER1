@@ -7,11 +7,15 @@
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
 
     <style>
+
         #content{
         font-family: 'Handlee', cursive;
         display: block;
         font-size: 25px;
         margin: 20px;
+        box-sizing: border-box;
+
+
 
         }
 
@@ -26,7 +30,7 @@
         display: inline-block;
         width: 400px;
         height: 750px;
-        margin: 20px;
+        margin-top: 20px;
         padding: 4px;
         background-color: skyblue;
 
@@ -37,9 +41,18 @@
         height: 300px;
         border-radius: 15px;
         }
+        .create{
+            text-align: center;
 
+        }
 
-
+        .cbutton{
+            background-color: skyblue;
+            height: 50px;
+            width: 150px;
+            border-radius: 15px;
+            font-size: 25px;
+        }
 
 
 
@@ -50,10 +63,11 @@
 
 
 <div id="content">
+    <div class="create"><a href="{% url 'blog_create' %}" ><button class="cbutton">CREATE</button></a></div>
     {% for post in object_list %}
     <div class = "one">
         <p class = "title">{{ post.title }}</p>
-        <img src="{{ post.image.url }}">
+        <a href="{% url 'blog_detail' post.id %}"><img src="{{ post.image.url }}"></a>
         <p class = "des">{{ post.description }}</p>
         <p>Create Date: {{ post.create_date }}</p>
         <p>Modify Date: {{ post.modify_date }}</p>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            width: 300px;
+            height: 20px;
+            border-radius: 15px;
+
+        }
+        .span{
+
+            border-radius: 15px;
+
+        }
+
+        div{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button1{
+            border-radius: 15px;
+            background-color: skyblue;
+            width: 200px;
+            height: 45px;
+            font-size: 19px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        }
+        .button1:hover{
+            background: MediumSlateBlue;
+        }
+        .all{
+            border: 3px solid blue;
+            border-radius: 15px;
+            width: 500px;
+            margin-left: 530px;
+            margin-top: 230px;
+        }
+
+    </style>
+</head>
+<body>
+
+<form method="post" action=".">{% csrf_token %}
+    <div class="all">
+        <div>
+            <span class="span">제목 입력:</span> {{ form.title }}
+
+        </div>
+        <div>
+            {{ form.url.label_tag }} {{ form.url }}
+
+        </div>
+
+        <button type="submit" class="button1">Create / Update</button>
+    </div>
+
+</form>
+
+</body>
+</html>

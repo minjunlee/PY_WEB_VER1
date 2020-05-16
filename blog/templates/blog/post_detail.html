@@ -11,11 +11,27 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
     </script>
+
+    <style>
+        .but{
+            width: 150px;
+            height: 30px;
+            background-color: skyblue;
+            border-radius: 10px;
+
+        }
+        #content{
+            text-align: center;
+        }
+
+
+    </style>
 </head>
 <body>
 
 <div id="content">
-
+    <a href="{% url 'blog_update' post.id %}"><button class="but">UPDATE</button></a>
+    <a href="{% url 'blog_delete' post.id %}"><button class="but">DELETE</button></a>
     <h1>{{ object.title }}</h1>
     <div>
         <p>Description: {{ object.description }}</p>

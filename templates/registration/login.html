@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <style>
+        .all{
+            width: 250px;
+            height:120px;
+            border-radius: 15px;
+            font-family: 'Source Sans Pro',serif;
+            background-color: orange;
+            margin: 0 auto;
+    }
+        .user_label{
+            display: inline-block;
+            padding-top: 10px;
+            font-weight: bold;
+            }
+        .user_form{
+            display: inline-block;
+            }
+
+
+        .button1 {
+        background-color: skyblue;
+        margin-left: 65px;
+        width: 100px;
+        height: 40px;
+        border-radius: 15px;
+        margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="all">
+    <form method="post" action=".">{% csrf_token %}
+        <div>
+            <div class="user_label">{{ form.username.label_tag }}</div>
+            <div class="user_form">{{ form.username }}</div>
+        </div>
+        <div>
+            <div class="user_label">{{ form.password.label_tag }}</div>
+            <div class="user_form">{{ form.password }}</div>
+        </div>
+
+        <button type="submit" class="button1">SIGN IN</button>
+        <input type="hidden" value="{{ next }}">
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <style>
+        input{
+            width: 300px;
+            height: 22px;
+
+        }
+        .title{
+            font-size: 20px;
+            text-align: center;
+            padding: 10px;
+         }
+
+        .all{
+            border: 3px solid blue;
+            border-radius: 15px;
+            margin-left: 370px;
+            margin-right: 370px;
+            margin-top: 200px;
+            text-align: center;
+        }
+        .button{
+            background-color: skyblue;
+            border-radius: 10px;
+            width: 150px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        .button:hover{
+            background: blue;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="all">
+    <form method="post" action="." enctype="multipart/form-data">{% csrf_token %}
+        <div>
+            <div class="title">{{ form.title.label_tag }}  {{ form.title }}</div>
+
+        </div>
+
+        <div>
+            <div class="title">{{ form.image.label_tag }}  {{ form.image }}</div>
+
+        </div>
+
+        <div>
+            <div class="title">{{ form.description.label_tag }}  {{ form.description }}</div>
+
+        </div>
+
+        <button type="submit" class="button">CREATE/UPDATE</button>
+
+    </form>
+</div>
+
+</body>
+</html>
